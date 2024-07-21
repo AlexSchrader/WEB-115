@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB-115 Final Project</title>
+    <link rel="stylesheet" href="styles.FP.css">
+</head>
+<body>
+    <header>
+        <h1>Build Your Meal Plan</h1>
+        <p>By Alex Schrader, WEB-115, Section 0001 </p>
+    </header>
+    <form id="meal-plan-form">
+      <div class="meal-plan-actions">
+        <button id="save-plan">Save Meal Plan</button>
+        <button id="load-plan">Load Meal Plan</button>
+      </div>
+        <div class="logo">
+          <div class="circle">
+            <video autoplay loop muted>
+              <source src="https://export-download.canva.com/dmIW0/DAGLVUdmIW0/20/0-7056449511171315389.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJHKNGJLC2J7OGJ6Q%2F20240719%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240719T101312Z&X-Amz-Expires=63323&X-Amz-Signature=9118343b33dc59b44dbcfdeadbbf95de2c8b3705979c5e8280a980a1fe8228ad&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Fitness%2520Center.mp4&response-expires=Sat%2C%2020%20Jul%202024%2003%3A48%3A35%20GMT" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          </div>
+        <h2>Personal Information</h2>
+        <label for="name">Name:</label>
+
+        <input type="text" id="name" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br><br>
+        <label for="goal">Goal for the week:</label>
+        <input type="text" id="goal" required><br><br>
+        <div class="meal-plan">
+          <button id="random-plan" class="random-plan" style="margin-left: 20px; margin-bottom: 10px">Generate Random Meals</button>
+          <h2>Meal Plan</h2>
+          <table id="meal-plan-table">
+            <tr>
+                <th><span class="day-of-week">Day</span></th>
+                <th>Breakfast</th>
+                <th>Snack</th>
+                <th>Lunch</th>
+                <th>Snack</th>
+                <th>Dinner</th>
+            </tr>
+            <tr>
+                <td><span class="day-of-week">Monday:</span></td>
+                <td>
+                    <select id="monday-breakfast" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Eggs and Bacon">Eggs and Bacon</option>
+                        <option value="Oatmeal with Fruit">Oatmeal with Fruit</option>
+                        <option value="Yogurt Parfait">Yogurt Parfait</option>
+                        <option value="Avocado Toast">Avocado Toast</option>
+                        <option value="Breakfast Burrito">Breakfast Burrito</option>
+                        <option value="Cereal with Milk">Cereal with Milk</option>
+                        <option value="Pancakes with Syrup">Pancakes with Syrup</option>
+                        <option value="Scrambled Eggs with Veggies">Scrambled Eggs with Veggies</option>
+                        <option value="Smoothie Bowl">Smoothie Bowl</option>
+                        <option value="Other">Other</option>
+                      </select>
+                      <input type="text" id="monday-breakfast-custom" class="custom-input" placeholder="Enter custom meal">
+                    </td>
+                <td>
+                    <select id="monday-snack" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Apple Slices">Apple Slices</option>
+                        <option value="Carrot Sticks with Hummus">Carrot Sticks with Hummus</option>
+                        <option value="Granola Bar">Granola Bar</option>
+                        <option value="Trail Mix">Trail Mix</option>
+                        <option value="Yogurt with Berries">Yogurt with Berries</option>
+                        <option value="Hard-Boiled Egg">Hard-Boiled Egg</option>
+                        <option value="Cut Veggies with Ranch">Cut Veggies with Ranch</option>
+                        <option value="Protein Shake">Protein Shake</option>
+                        <option value="Fresh Fruit Salad">Fresh Fruit Salad</option>
+                        <option value="Other">Other</option>
+                      </select>
+                      <input type="text" id="monday-snack-custom" class="custom-input" placeholder="Enter custom meal">
+                    </td>
+                <td>
+                    <select id="monday-lunch" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Grilled Chicken Sandwich">Grilled Chicken Sandwich</option>
+                        <option value="Turkey Wrap">Turkey Wrap</option>
+                        <option value="Veggie Burger">Veggie Burger</option>
+                        <option value="Chicken Caesar Salad">Chicken Caesar Salad</option>
+                        <option value="Tuna Salad Sandwich">Tuna Salad Sandwich</option>
+                        <option value="Pasta with Marinara Sauce">Pasta with Marinara Sauce</option>
+                        <option value="Chicken Quesadilla">Chicken Quesadilla</option>
+                        <option value="Greek Salad">Greek Salad</option>
+                        <option value="Lentil Soup">Lentil Soup</option>
+                        <option value="Other">Other</option>
+                      </select>
+                      <input type="text" id="monday-lunch-custom" class="custom-input" placeholder="Enter custom meal">
+                    </td>
+                <td>
+                    <select id="monday-snack2" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Rice Cakes with Peanut Butter">Rice Cakes with Peanut Butter</option>
+                        <option value="Cottage Cheese with Fruit">Cottage Cheese with Fruit</option>
+                        <option value="Energy Bar">Energy Bar</option>
+                        <option value="Cut Fruits with Cheese">Cut Fruits with Cheese</option>
+                        <option value="Protein Bar">Protein Bar</option>
+                        <option value="Yogurt with Honey">Yogurt with Honey</option>
+                        <option value="Apple Sauce">Apple Sauce</option>
+                        <option value="Carrot Sticks with Ranch">Carrot Sticks with Ranch</option>
+                        <option value="Hard-Boiled Egg">Hard-Boiled Egg</option>
+                        <option value="Other">Other</option>
+                      </select>
+                      <input type="text" id="monday-snack2-custom" class="custom-input" placeholder="Enter custom meal">
+                    </td>
+                <td>
+                    <select id="monday-dinner" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Grilled Chicken Breast">Grilled Chicken Breast</option>
+                        <option value="Baked Salmon">Baked Salmon</option>
+                        <option value="Beef Stir-Fry">Beef Stir-Fry</option>
+                        <option value="Vegetable Curry">Vegetable Curry</option>
+                        <option value="Chicken Fajitas">Chicken Fajitas</option>
+                        <option value="Shrimp Scampi">Shrimp Scampi</option>
+                        <option value="Lentil Soup">Lentil Soup</option>
+                        <option value="Grilled Turkey Burger">Grilled Turkey Burger</option>
+                        <option value="Spaghetti with Meat Sauce">Spaghetti with Meat Sauce</option>
+                        <option value="Other">Other</option>
+                      </select>
+                      <input type="text" id="monday-dinner-custom" class="custom-input" placeholder="Enter custom meal">
+                    </td>
+            </tr>
+            <tr>
+                <td><span class="day-of-week">Tuesday:</span></td>
+                <td>
+                    <select id="tuesday-breakfast" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Eggs and Bacon">Eggs and Bacon</option>
+                        <option value="Oatmeal with Fruit">Oatmeal with Fruit</option>
+                        <option value="Yogurt Parfait">Yogurt Parfait</option>
+                        <option value="Avocado Toast">Avocado Toast</option>
+                        <option value="Breakfast Burrito">Breakfast Burrito</option>
+                        <option value="Cereal with Milk">Cereal with Milk</option>
+                        <option value="Pancakes with Syrup">Pancakes with Syrup</option>
+                        <option value="Scrambled Eggs with Veggies">Scrambled Eggs with Veggies</option>
+                        <option value="Smoothie Bowl">Smoothie Bowl</option>
+                        <option value="Other">Other</option>
+                      </select>
+                      <input type="text" id="tuesday-breakfast-custom" class="custom-input" placeholder="Enter custom meal">
+                    </td>
+                <td>
+                    <select id="tuesday-snack" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Apple Slices">Apple Slices</option>
+                        <option value="Carrot Sticks with Hummus">Carrot Sticks with Hummus</option>
+                        <option value="Granola Bar">Granola Bar</option>
+                        <option value="Trail Mix">Trail Mix</option>
+                        <option value="Yogurt with Berries">Yogurt with Berries</option>
+                        <option value="Hard-Boiled Egg">Hard-Boiled Egg</option>
+                        <option value="Cut Veggies with Ranch">Cut Veggies with Ranch</option>
+                        <option value="Protein Shake">Protein Shake</option>
+                        <option value="Fresh Fruit Salad">Fresh Fruit Salad</option>
+                        <option value="Other">Other</option>
+                      </select>
+                      <input type="text" id="tuesday-snack-custom" class="custom-input" placeholder="Enter custom meal">
+                    </td>
+                <td>
+                    <select id="tuesday-lunch" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Grilled Chicken Sandwich">Grilled Chicken Sandwich</option>
+                        <option value="Turkey Wrap">Turkey Wrap</option>
+                        <option value="Veggie Burger">Veggie Burger</option>
+                        <option value="Chicken Caesar Salad">Chicken Caesar Salad</option>
+                        <option value="Tuna Salad Sandwich">Tuna Salad Sandwich</option>
+                        <option value="Pasta with Marinara Sauce">Pasta with Marinara Sauce</option>
+                        <option value="Chicken Quesadilla">Chicken Quesadilla</option>
+                        <option value="Greek Salad">Greek Salad</option>
+                        <option value="Lentil Soup">Lentil Soup</option>
+                        <option value="Other">Other</option>
+                      </select>
+                      <input type="text" id="tuesday-lunch-custom" class="custom-input" placeholder="Enter custom meal">
+                    </td>
+                <td>
+                    <select id="tuesday-snack2" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Rice Cakes with Peanut Butter">Rice Cakes with Peanut Butter</option>
+                        <option value="Cottage Cheese with Fruit">Cottage Cheese with Fruit</option>
+                        <option value="Energy Bar">Energy Bar</option>
+                        <option value="Cut Fruits with Cheese">Cut Fruits with Cheese</option>
+                        <option value="Protein Bar">Protein Bar</option>
+                        <option value="Yogurt with Honey">Yogurt with Honey</option>
+                        <option value="Apple Sauce">Apple Sauce</option>
+                        <option value="Carrot Sticks with Ranch">Carrot Sticks with Ranch</option>
+                        <option value="Hard-Boiled Egg">Hard-Boiled Egg</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    <input type="text" id="tuesday-snack2-custom"  class="custom-input" placeholder="Enter custom meal">
+                </td>
+                <td>
+                    <select id="tuesday-dinner" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Grilled Chicken Breast">Grilled Chicken Breast</option>
+                        <option value="Baked Salmon">Baked Salmon</option>
+                        <option value="Beef Stir-Fry">Beef Stir-Fry</option>
+                        <option value="Vegetable Curry">Vegetable Curry</option>
+                        <option value="Chicken Fajitas">Chicken Fajitas</option>
+                        <option value="Shrimp Scampi">Shrimp Scampi</option>
+                        <option value="Lentil Soup">Lentil Soup</option>
+                        <option value="Grilled Turkey Burger">Grilled Turkey Burger</option>
+                        <option value="Spaghetti with Meat Sauce">Spaghetti with Meat Sauce</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    <input type="text" id="tuesday-dinner-custom" class="custom-input" placeholder="Enter custom meal">
+                </td>
+            </tr>
+                <td><span class="day-of-week">wednesday:</span></td>
+                <td>
+                    <select id="wednesday-breakfast" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Eggs and Bacon">Eggs and Bacon</option>
+                        <option value="Oatmeal with Fruit">Oatmeal with Fruit</option>
+                        <option value="Yogurt Parfait">Yogurt Parfait</option>
+                        <option value="Avocado Toast">Avocado Toast</option>
+                        <option value="Breakfast Burrito">Breakfast Burrito</option>
+                        <option value="Cereal with Milk">Cereal with Milk</option>
+                        <option value="Pancakes with Syrup">Pancakes with Syrup</option>
+                        <option value="Scrambled Eggs with Veggies">Scrambled Eggs with Veggies</option>
+                        <option value="Smoothie Bowl">Smoothie Bowl</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    <input type="text" id="wednesday-breakfast-custom" class="custom-input" placeholder="Enter custom meal">
+                </td>
+                <td>
+                    <select id="wednesday-snack" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Apple Slices">Apple Slices</option>
+                        <option value="Carrot Sticks with Hummus">Carrot Sticks with Hummus</option>
+                        <option value="Granola Bar">Granola Bar</option>
+                        <option value="Trail Mix">Trail Mix</option>
+                        <option value="Yogurt with Berries">Yogurt with Berries</option>
+                        <option value="Hard-Boiled Egg">Hard-Boiled Egg</option>
+                        <option value="Cut Veggies with Ranch">Cut Veggies with Ranch</option>
+                        <option value="Protein Shake">Protein Shake</option>
+                        <option value="Fresh Fruit Salad">Fresh Fruit Salad</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    <input type="text" id="wednesday-snack-custom" class="custom-input" placeholder="Enter custom meal">
+                </td>
+                <td>
+                    <select id="wednesday-lunch" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Grilled Chicken Sandwich">Grilled Chicken Sandwich</option>
+                        <option value="Turkey Wrap">Turkey Wrap</option>
+                        <option value="Veggie Burger">Veggie Burger</option>
+                        <option value="Chicken Caesar Salad">Chicken Caesar Salad</option>
+                        <option value="Tuna Salad Sandwich">Tuna Salad Sandwich</option>
+                        <option value="Pasta with Marinara Sauce">Pasta with Marinara Sauce</option>
+                        <option value="Chicken Quesadilla">Chicken Quesadilla</option>
+                        <option value="Greek Salad">Greek Salad</option>
+                        <option value="Lentil Soup">Lentil Soup</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    <input type="text" id="wednesday-lunch-custom" class="custom-input" placeholder="Enter custom meal">
+                </td>
+                <td>
+                    <select id="wednesday-snack2" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Rice Cakes with Peanut Butter">Rice Cakes with Peanut Butter</option>
+                        <option value="Cottage Cheese with Fruit">Cottage Cheese with Fruit</option>
+                        <option value="Energy Bar">Energy Bar</option>
+                        <option value="Cut Fruits with Cheese">Cut Fruits with Cheese</option>
+                        <option value="Protein Bar">Protein Bar</option>
+                        <option value="Yogurt with Honey">Yogurt with Honey</option>
+                        <option value="Apple Sauce">Apple Sauce</option>
+                        <option value="Carrot Sticks with Ranch">Carrot Sticks with Ranch</option>
+                        <option value="Hard-Boiled Egg">Hard-Boiled Egg</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    <input type="text" id="wednesday-snack2-custom" class="custom-input" placeholder="Enter custom meal">
+                </td>
+                <td>
+                    <select id="wednesday-dinner" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Grilled Chicken Breast">Grilled Chicken Breast</option>
+                        <option value="Baked Salmon">Baked Salmon</option>
+                        <option value="Beef Stir-Fry">Beef Stir-Fry</option>
+                        <optionvalue="Vegetable Curry">Vegetable Curry</option>
+                        <option value="Chicken Fajitas">Chicken Fajitas</option>
+                        <option value="Shrimp Scampi">Shrimp Scampi</option>
+                        <option value="Lentil Soup">Lentil Soup</option>
+                        <option value="Grilled Turkey Burger">Grilled Turkey Burger</option>
+                        <option value="Spaghetti with Meat Sauce">Spaghetti with Meat Sauce</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    <input type="text" id="wednesday-dinner-custom" class="custom-input" placeholder="Enter custom meal">
+                </td>
+            </tr>
+            <tr>
+                <td><span class="day-of-week">Thursday:</span></td>
+                <td>
+                    <select id="thursday-breakfast" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Eggs and Bacon">Eggs and Bacon</option>
+                        <option value="Oatmeal with Fruit">Oatmeal with Fruit</option>
+                        <option value="Yogurt Parfait">Yogurt Parfait</option>
+                        <option value="Avocado Toast">Avocado Toast</option>
+                        <option value="Breakfast Burrito">Breakfast Burrito</option>
+                        <option value="Cereal with Milk">Cereal with Milk</option>
+                        <option value="Pancakes with Syrup">Pancakes with Syrup</option>
+                        <option value="Scrambled Eggs with Veggies">Scrambled Eggs with Veggies</option>
+                        <option value="Smoothie Bowl">Smoothie Bowl</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    <input type="text" id="thursday-breakfast-custom" class="custom-input" placeholder="Enter custom meal">
+                </td>
+                <td>
+                    <select id="thursday-snack" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Apple Slices">Apple Slices</option>
+                        <option value="Carrot Sticks with Hummus">Carrot Sticks with Hummus</option>
+                        <option value="Granola Bar">Granola Bar</option>
+                        <option value="Trail Mix">Trail Mix</option>
+                        <option value="Yogurt with Berries">Yogurt with Berries</option>
+                        <option value="Hard-Boiled Egg">Hard-Boiled Egg</option>
+                        <option value="Cut Veggies with Ranch">Cut Veggies with Ranch</option>
+                        <option value="Protein Shake">Protein Shake</option>
+                        <option value="Fresh Fruit Salad">Fresh Fruit Salad</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    <input type="text" id="thursday-snack-custom" class="custom-input" placeholder="Enter custom meal">
+                </td>
+                <td>
+                    <select id="thursday-lunch" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Grilled Chicken Sandwich">Grilled Chicken Sandwich</option>
+                        <option value="Turkey Wrap">Turkey Wrap</option>
+                        <option value="Veggie Burger">Veggie Burger</option>
+                        <option value="Chicken Caesar Salad">Chicken Caesar Salad</option>
+                        <option value="Tuna Salad Sandwich">Tuna Salad Sandwich</option>
+                        <option value="Pasta with Marinara Sauce">Pasta with Marinara Sauce</option>
+                        <option value="Chicken Quesadilla">Chicken Quesadilla</option>
+                        <option value="Greek Salad">Greek Salad</option>
+                        <option value="Lentil Soup">Lentil Soup</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    <input type="text" id="thursday-lunch-custom" class="custom-input" placeholder="Enter custom meal">
+                </td>
+                <td>
+                    <select id="thursday-snack2" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Rice Cakes with Peanut Butter">Rice Cakes with Peanut Butter</option>
+                        <option value="Cottage Cheese with Fruit">Cottage Cheese with Fruit</option>
+                        <option value="Energy Bar">Energy Bar</option>
+                        <option value="Cut Fruits with Cheese">Cut Fruits with Cheese</option>
+                        <option value="Protein Bar">Protein Bar</option>
+                        <option value="Yogurt with Honey">Yogurt with Honey</option>
+                        <option value="Apple Sauce">Apple Sauce</option>
+                        <option value="Carrot Sticks with Ranch">Carrot Sticks with Ranch</option>
+                        <option value="Hard-Boiled Egg">Hard-Boiled Egg</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    <input type="text" id="thursday-snack2-custom" class="custom-input" placeholder="Enter custom meal">
+                </td>
+                <td>
+                    <select id="thursday-dinner" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Grilled Chicken Breast">Grilled Chicken Breast</option>
+                        <option value="Baked Salmon">Baked Salmon</option>
+                        <option value="Beef Stir-Fry">Beef Stir-Fry</option>
+                        <option value="Vegetable Curry">Vegetable Curry</option>
+                        <option value="Chicken Fajitas">Chicken Fajitas</option>
+                        <option value="Shrimp Scampi">Shrimp Scampi</option>
+                        <option value="Lentil Soup">Lentil Soup</option>
+                        <option value="Grilled Turkey Burger">Grilled Turkey Burger</option>
+                        <option value="Spaghetti with Meat Sauce">Spaghetti with Meat Sauce</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    <input type="text" id="thursday-dinner-custom" class="custom-input" placeholder="Enter custom meal">
+                </td>
+            </tr>
+            <tr>
+                <td><span class="day-of-week">Friday:</span></td>
+                <td>
+                    <select id="friday-breakfast" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Eggs and Bacon">Eggs and Bacon</option>
+                        <option value="Oatmeal with Fruit">Oatmeal with Fruit</option>
+                        <option value="Yogurt Parfait">Yogurt Parfait</option>
+                        <option value="Avocado Toast">Avocado Toast</option>
+                        <option value="Breakfast Burrito">Breakfast Burrito</option>
+                        <option value="Cereal with Milk">Cereal with Milk</option>
+                        <option value="Pancakes with Syrup">Pancakes with Syrup</option>
+                        <option value="Scrambled Eggs with Veggies">Scrambled Eggs with Veggies</option>
+                        <option value="Smoothie Bowl">Smoothie Bowl</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    <input type="text" id="friday-breakfast-custom" class="custom-input" placeholder="Enter custom meal">
+                </td>
+                <td>
+                    <select id="friday-snack" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Apple Slices">Apple Slices</option>
+                        <option value="Carrot Sticks with Hummus">Carrot Sticks with Hummus</option>
+                        <option value="Granola Bar">Granola Bar</option>
+                        <option value="Trail Mix">Trail Mix</option>
+                        <option value="Yogurt with Berries">Yogurt with Berries</option>
+                        <option value="Hard-Boiled Egg">Hard-Boiled Egg</option>
+                        <option value="Cut Veggies with Ranch">Cut Veggies with Ranch</option>
+                        <option value="Protein Shake">Protein Shake</option>
+                        <option value="Fresh Fruit Salad">Fresh Fruit Salad</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    <input type="text" id="friday-snack-custom" class="custom-input" placeholder="Enter custom meal">
+                </td>
+                <td>
+                    <select id="friday-lunch" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Grilled Chicken Sandwich">Grilled Chicken Sandwich</option>
+                        <option value="Turkey Wrap">Turkey Wrap</option>
+                        <option value="Veggie Burger">Veggie Burger</option>
+                        <option value="Chicken Caesar Salad">Chicken Caesar Salad</option>
+                        <option value="Tuna Salad Sandwich">Tuna Salad Sandwich</option>
+                        <option value="Pasta with Marinara Sauce">Pasta with Marinara Sauce</option>
+                        <option value="Chicken Quesadilla">Chicken Quesadilla</option>
+                        <option value="Greek Salad">Greek Salad</option>
+                        <option value="Lentil Soup">Lentil Soup</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    <input type="text" id="friday-lunch-custom" class="custom-input" placeholder="Enter custom meal">
+                </td>
+                <td>
+                    <select id="friday-snack2" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Rice Cakes with Peanut Butter">Rice Cakes with Peanut Butter</option>
+                        <option value="Cottage Cheese with Fruit">Cottage Cheese with Fruit</option>
+                        <option value="Energy Bar">Energy Bar</option>
+                        <option value="Cut Fruits with Cheese">Cut Fruits with Cheese</option>
+                        <option value="Protein Bar">Protein Bar</option>
+                        <option value="Yogurt with Honey">Yogurt with Honey</option>
+                        <option value="Apple Sauce">Apple Sauce</option>
+                        <option value="Carrot Sticks with Ranch">Carrot Sticks with Ranch</option>
+                        <option value="Hard-Boiled Egg">Hard-Boiled Egg</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    <input type="text" id="friday-snack2-custom" class="custom-input" placeholder="Enter custom meal">
+                </td>
+                <td>
+                    <select id="friday-dinner" class="dropdown-box">
+                        <option value="">Select a meal</option>
+                        <option value="Grilled Chicken Breast">Grilled Chicken Breast</option>
+                        <option value="Baked Salmon">Baked Salmon</option>
+                        <option value="Beef Stir-Fry">Beef Stir-Fry</option>
+                        <option value="Vegetable Curry">Vegetable Curry</option>
+                        <option value="Chicken Fajitas">Chicken Fajitas</option>
+                        <option value="Shrimp Scampi">Shrimp Scampi</option>
+                        <option value="Lentil Soup">Lentil Soup</option>
+                        <option value="Grilled Turkey Burger">Grilled Turkey Burger</option>
+                        <option value="Spaghetti with Meat Sauce">Spaghetti with Meat Sauce</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    <input type="text" id="friday-dinner-custom" class="custom-input" placeholder="Enter custom meal">
+                </td>
+            </tr>
+            <tr>
+              <td><span class="day-of-week">Saturday:</span></td>
+              <td>
+                  <select id="saturday-breakfast" class="dropdown-box">
+                      <option value="">Select a meal</option>
+                      <option value="Eggs and Bacon">Eggs and Bacon</option>
+                      <option value="Oatmeal with Fruit">Oatmeal with Fruit</option>
+                      <option value="Yogurt Parfait">Yogurt Parfait</option>
+                      <option value="Avocado Toast">Avocado Toast</option>
+                      <option value="Breakfast Burrito">Breakfast Burrito</option>
+                      <option value="Cereal with Milk">Cereal with Milk</option>
+                      <option value="Pancakes with Syrup">Pancakes with Syrup</option>
+                      <option value="Scrambled Eggs with Veggies">Scrambled Eggs with Veggies</option>
+                      <option value="Smoothie Bowl">Smoothie Bowl</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  <input type="text" id="saturday-breakfast-custom" class="custom-input" placeholder="Enter custom meal">
+              </td>
+              <td>
+                  <select id="saturday-snack" class="dropdown-box">
+                      <option value="">Select a meal</option>
+                      <option value="Apple Slices">Apple Slices</option>
+                      <option value="Carrot Sticks with Hummus">Carrot Sticks with Hummus</option>
+                      <option value="Granola Bar">Granola Bar</option>
+                      <option value="Trail Mix">Trail Mix</option>
+                      <option value="Yogurt with Berries">Yogurt with Berries</option>
+                      <option value="Hard-Boiled Egg">Hard-Boiled Egg</option>
+                      <option value="Cut Veggies with Ranch">Cut Veggies with Ranch</option>
+                      <option value="Protein Shake">Protein Shake</option>
+                      <option value="Fresh Fruit Salad">Fresh Fruit Salad</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  <input type="text" id="saturday-snack-custom" class="custom-input" placeholder="Enter custom meal">
+              </td>
+              <td>
+                  <select id="saturday-lunch" class="dropdown-box">
+                      <option value="">Select a meal</option>
+                      <option value="Grilled Chicken Sandwich">Grilled Chicken Sandwich</option>
+                      <option value="Turkey Wrap">Turkey Wrap</option>
+                      <option value="Veggie Burger">Veggie Burger</option>
+                      <option value="Chicken Caesar Salad">Chicken Caesar Salad</option>
+                      <option value="Tuna Salad Sandwich">Tuna Salad Sandwich</option>
+                      <option value="Pasta with Marinara Sauce">Pasta with Marinara Sauce</option>
+                      <option value="Chicken Quesadilla">Chicken Quesadilla</option>
+                      <option value="Greek Salad">Greek Salad</option>
+                      <option value="Lentil Soup">Lentil Soup</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  <input type="text" id="saturday-lunch-custom" class="custom-input" placeholder="Enter custom meal">
+              </td>
+              <td>
+                  <select id="saturday-snack2" class="dropdown-box">
+                      <option value="">Select a meal</option>
+                      <option value="Rice Cakes with Peanut Butter">Rice Cakes with Peanut Butter</option>
+                      <option value="Cottage Cheese with Fruit">Cottage Cheese with Fruit</option>
+                      <option value="Energy Bar">Energy Bar</option>
+                      <option value="Cut Fruits with Cheese">Cut Fruits with Cheese</option>
+                      <option value="Protein Bar">Protein Bar</option>
+                      <option value="Yogurt with Honey">Yogurt with Honey</option>
+                      <option value="Apple Sauce">Apple Sauce</option>
+                      <option value="Carrot Sticks with Ranch">Carrot Sticks with Ranch</option>
+                      <option value="Hard-Boiled Egg">Hard-Boiled Egg</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  <input type="text" id="saturday-snack2-custom" class="custom-input" placeholder="Enter custom meal">
+              </td>
+              <td>
+                  <select id="saturday-dinner" class="dropdown-box">
+                      <option value="">Select a meal</option>
+                      <option value="Grilled Chicken Breast">Grilled Chicken Breast</option>
+                      <option value="Baked Salmon">Baked Salmon</option>
+                      <option value="Beef Stir-Fry">Beef Stir-Fry</option>
+                      <option value="Vegetable Curry">Vegetable Curry</option>
+                      <option value="Chicken Fajitas">Chicken Fajitas</option>
+                      <option value="Shrimp Scampi">Shrimp Scampi</option>
+                      <option value="Lentil Soup">Lentil Soup</option>
+                      <option value="Grilled Turkey Burger">Grilled Turkey Burger</option>
+                      <option value="Spaghetti with Meat Sauce">Spaghetti with Meat Sauce</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  <input type="text" id="saturday-dinner-custom" class="custom-input" placeholder="Enter custom meal">
+              </td>
+          </tr>
+          <tr>
+            <td><span class="day-of-week">Sunday:</span></td>
+            <td>
+                <select id="sunday-breakfast" class="dropdown-box">
+                    <option value="">Select a meal</option>
+                    <option value="Eggs and Bacon">Eggs and Bacon</option>
+                    <option value="Oatmeal with Fruit">Oatmeal with Fruit</option>
+                    <option value="Yogurt Parfait">Yogurt Parfait</option>
+                    <option value="Avocado Toast">Avocado Toast</option>
+                    <option value="Breakfast Burrito">Breakfast Burrito</option>
+                    <option value="Cereal with Milk">Cereal with Milk</option>
+                    <option value="Pancakes with Syrup">Pancakes with Syrup</option>
+                    <option value="Scrambled Eggs with Veggies">Scrambled Eggs with Veggies</option>
+                    <option value="Smoothie Bowl">Smoothie Bowl</option>
+                    <option value="Other">Other</option>
+                  </select>
+                <input type="text" id="sunday-breakfast-custom" class="custom-input" placeholder="Enter custom meal">
+            </td>
+            <td>
+                <select id="sunday-snack" class="dropdown-box">
+                    <option value="">Select a meal</option>
+                    <option value="Apple Slices">Apple Slices</option>
+                    <option value="Carrot Sticks with Hummus">Carrot Sticks with Hummus</option>
+                    <option value="Granola Bar">Granola Bar</option>
+                    <option value="Trail Mix">Trail Mix</option>
+                    <option value="Yogurt with Berries">Yogurt with Berries</option>
+                    <option value="Hard-Boiled Egg">Hard-Boiled Egg</option>
+                    <option value="Cut Veggies with Ranch">Cut Veggies with Ranch</option>
+                    <option value="Protein Shake">Protein Shake</option>
+                    <option value="Fresh Fruit Salad">Fresh Fruit Salad</option>
+                    <option value="Other">Other</option>
+                  </select>
+                <input type="text" id="sunday-snack-custom" class="custom-input" placeholder="Enter custom meal">
+            </td>
+            <td>
+                <select id="sunday-lunch" class="dropdown-box">
+                    <option value="">Select a meal</option>
+                    <option value="Grilled Chicken Sandwich">Grilled Chicken Sandwich</option>
+                    <option value="Turkey Wrap">Turkey Wrap</option>
+                    <option value="Veggie Burger">Veggie Burger</option>
+                    <option value="Chicken Caesar Salad">Chicken Caesar Salad</option>
+                    <option value="Tuna Salad Sandwich">Tuna Salad Sandwich</option>
+                    <option value="Pasta with Marinara Sauce">Pasta with Marinara Sauce</option>
+                    <option value="Chicken Quesadilla">Chicken Quesadilla</option>
+                    <option value="Greek Salad">Greek Salad</option>
+                    <option value="Lentil Soup">Lentil Soup</option>
+                    <option value="Other">Other</option>
+                  </select>
+                <input type="text" id="sunday-lunch-custom" class="custom-input" placeholder="Enter custom meal">
+            </td>
+            <td>
+                <select id="sunday-snack2" class="dropdown-box">
+                    <option value="">Select a meal</option>
+                    <option value="Rice Cakes with Peanut Butter">Rice Cakes with Peanut Butter</option>
+                    <option value="Cottage Cheese with Fruit">Cottage Cheese with Fruit</option>
+                    <option value="Energy Bar">Energy Bar</option>
+                    <option value="Cut Fruits with Cheese">Cut Fruits with Cheese</option>
+                    <option value="Protein Bar">Protein Bar</option>
+                    <option value="Yogurt with Honey">Yogurt with Honey</option>
+                    <option value="Apple Sauce">Apple Sauce</option>
+                    <option value="Carrot Sticks with Ranch">Carrot Sticks with Ranch</option>
+                    <option value="Hard-Boiled Egg">Hard-Boiled Egg</option>
+                    <option value="Other">Other</option>
+                  </select>
+                <input type="text" id="sunday-snack2-custom" class="custom-input" placeholder="Enter custom meal">
+            </td>
+            <td>
+                <select id="sunday-dinner" class="dropdown-box">
+                    <option value="">Select a meal</option>
+                    <option value="Grilled Chicken Breast">Grilled Chicken Breast</option>
+                    <option value="Baked Salmon">Baked Salmon</option>
+                    <option value="Beef Stir-Fry">Beef Stir-Fry</option>
+                    <option value="Vegetable Curry">Vegetable Curry</option>
+                    <option value="Chicken Fajitas">Chicken Fajitas</option>
+                    <option value="Shrimp Scampi">Shrimp Scampi</option>
+                    <option value="Lentil Soup">Lentil Soup</option>
+                    <option value="Grilled Turkey Burger">Grilled Turkey Burger</option>
+                    <option value="Spaghetti with Meat Sauce">Spaghetti with Meat Sauce</option>
+                    <option value="Other">Other</option>
+                  </select>
+                <input type="text" id="sunday-dinner-custom" class="custom-input" placeholder="Enter custom meal">
+            </td>
+        </tr>
+        </table>
+      </div>
+      <div class="buttons-cointainer">
+        <button id="generate-plan" class="generate-plan">Generate Meal Plan</button>
+        <button id="clear-plan" class="clear">Clear Meal Plan</button>
+      </div>
+      </form>
+
+
+    <script src="projectJS.js"></script>
+</body>
+</html>

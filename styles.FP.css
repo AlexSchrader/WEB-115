@@ -1,0 +1,541 @@
+/* Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f9f9f9;
+  overflow-x: hidden; 
+}
+
+/* Logo */
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.logo .circle {
+  width: 300px;
+  height: 300px; 
+  border-radius: 50%; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  overflow: hidden; 
+}
+
+.logo video {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover; 
+  object-position: center; 
+}
+/* Header Styles */
+
+header {
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  border-bottom: 5px solid #4CAF50;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
+
+header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
+
+.meal-plan {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Styles */
+
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 2s; 
+}
+
+h2 {
+  font-size: 34px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #4CAF50;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
+
+/* Form Styles */
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+  animation: bounce 2s; 
+}
+
+input[type="text"], input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.2s; 
+}
+
+input[type="text"]:focus, input[type="email"]:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: pulse 2s; 
+}
+
+.generate-plan {
+  background-color: #34A853;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 30px;
+  margin-left: 30%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.generate-plan:hover {
+  background-color: #2F7B4F;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.generate-plan:active {
+  background-color: #1A5F3A;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
+}
+
+.clear {
+  background-color: #FFC107;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  margin-left: 10px; 
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.clear:hover {
+  background-color: #FFA07A;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.clear:active {
+  background-color: #FF9900;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
+}
+.random-plan {
+  background-color: #8BC34A;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.random-plan:hover {
+  background-color: #6B9B37;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.random-plan:active {
+  background-color: #4C733F;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-1px);
+  }
+  20% {
+    transform: translateX(1px);
+  }
+  30% {
+    transform: translateX(-1px);
+  }
+  40% {
+    transform: translateX(1px);
+  }
+  50% {
+    transform: translateX(-1px);
+  }
+  60% {
+    transform: translateX(1px);
+  }
+  70% {
+    transform: translateX(-1px);
+  }
+  80% {
+    transform: translateX(1px);
+  }
+  90% {
+    transform: translateX(-1px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* List Styles */
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  animation: slideIn 2s; 
+}
+
+li label {
+  display: inline-block;
+  width: 150px;
+  font-weight: bold;
+  color: #333;
+  animation: fadeInLeft 2s; 
+}
+
+li input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  animation: fadeInRight 2s; 
+}
+
+/* Responsive Styles */
+
+@media (max-width: 600px) {
+  main {
+    max-width: 90%;
+  }
+  input[type="text"], input[type="email"] {
+    width: 100%;
+  }
+  li input[type="text"] {
+    width: 100%;
+  }
+}
+
+/* Add a media query for mobile devices */
+@media only screen and (max-width: 600px) {
+  /* Make the form fields full-width */
+  input[type="text"], input[type="email"] {
+    width: 100%;
+  }
+
+  /* Make the labels and fields stack vertically */
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  /* Make the meal plan table more compact */
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 5px;
+  }
+
+  /* Make the buttons full-width */
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Add a media query for very small screens (e.g. iPhone 5) */
+@media only screen and (max-width: 320px) {
+  /* Make the form fields even more compact */
+  input[type="text"], input[type="email"] {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  /* Make the meal plan table even more compact */
+  table {
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 2px;
+  }
+}
+
+/* Add styles for the save and load buttons */
+.meal-plan-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3333;
+  padding: 15px;
+  border: 1px solid #3333;
+  border-radius: 10px;
+  width:250px;
+  margin: 20px auto;
+  animation: fadeIn 2s;
+}
+
+/* Style the load and save buttons */
+.meal-plan-actions button {
+  background-color: #337ab7;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+.meal-plan-actions button:hover {
+  background-color: #23527c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: scale 2s; 
+}
+
+.meal-plan-actions button:active {
+  background-color: #1a4567;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  animation: shake 2s; 
+}
+
+/* Add some space between the buttons */
+.meal-plan-actions button + button {
+  margin-left: 20px;
+}
+
+.meal-plan-actions {
+  position: absolute;
+  top: -20px;
+  right: 10px;
+}
+
+/* Style the custom meal input boxes */
+.custom-meal-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  animation: fadeIn 2s;
+}
+
+/* Style the dropdown boxes */
+.dropdown-box {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  animation: fadeIn 2s; 
+}
+
+/* Style the dropdown box options */
+.dropdown-box option {
+  padding: 10px;
+  font-size: 16px;
+  animation: fadeIn 2s; 
+}
+
+ /* Style the days of the week */
+.day-of-week {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #4CAF50;
+  animation: bounce 2s; 
+}
+
+/* Animations */
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes wobble {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+}
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
